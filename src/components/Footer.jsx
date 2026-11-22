@@ -7,7 +7,7 @@ import { InstagramIcon, PhoneIcon, PinIcon, WhatsAppIcon } from './Icons'
 export default function Footer() {
   const { groups } = useCatalog()
   return (
-    <footer className="footer">
+    <footer className="footer always-dark">
       <div className="container footer-grid">
         <div className="footer-brand">
           <img src="/brand/logo-wordmark.webp" alt="Delta Collection" width="300" height="84" loading="lazy" />

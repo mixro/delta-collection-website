@@ -4,6 +4,7 @@ import { fromRow, IMAGE_BUCKET, isSupabaseReady, supabase, toRow } from '../../l
 import { formatPrice, imageUrl, slugify } from '../../lib/format'
 import { GROUPS } from '../../config'
 import { CloseIcon, PlusIcon, SearchIcon } from '../../components/Icons'
+import ThemeToggle from '../../components/ThemeToggle'
 import '../../admin.css'
 
 export default function Admin() {
@@ -22,12 +23,15 @@ function Shell({ children, onSignOut, email }) {
           <img src="/brand/monogram.png" alt="" width="32" height="32" />
           <span>Delta Collection <em>Admin</em></span>
         </Link>
+        <div className="admin-user">
+          <ThemeToggle />
         {onSignOut && (
-          <div className="admin-user">
+          <>
             <span className="muted small hide-sm">{email}</span>
             <button className="btn btn-ghost btn-sm" onClick={onSignOut}>Sign out</button>
-          </div>
+          </>
         )}
+        </div>
       </header>
       <div className="admin-body">{children}</div>
     </div>

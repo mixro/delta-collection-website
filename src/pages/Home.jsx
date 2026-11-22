@@ -112,7 +112,7 @@ export default function Home() {
       </section>
 
       {/* FRAGRANCE HOUSE */}
-      <section className="fragrance">
+      <section className="fragrance always-dark">
         <div className="container fragrance-inner">
           <div className="fragrance-copy">
             <p className="eyebrow">The fragrance house</p>

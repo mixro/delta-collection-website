@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -9,6 +9,14 @@
     <meta property="og:title" content="Delta Collection" />
     <meta property="og:description" content="Skincare, body care and perfumes. Browse the collection and order on WhatsApp." />
     <meta property="og:image" content="/brand/logo-circle.webp" />
+    <script>
+      // Apply the saved theme before the page paints, so it never flashes.
+      try {
+        var t = localStorage.getItem('dc-theme')
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t)
+        if (t === 'light') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#faf6ef')
+      } catch (e) {}
+    </script>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />

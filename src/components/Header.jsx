@@ -5,6 +5,7 @@ import { useCatalog } from '../lib/catalog'
 import { BUSINESS } from '../config'
 import Logo from './Logo'
 import SearchOverlay from './SearchOverlay'
+import ThemeToggle from './ThemeToggle'
 import { BagIcon, CloseIcon, MenuIcon, SearchIcon, WhatsAppIcon } from './Icons'
 import { askLink } from '../lib/whatsapp'
 
@@ -64,6 +65,7 @@ export default function Header() {
             <button className="icon-btn only-mobile" onClick={() => setSearch(true)} aria-label="Search">
               <SearchIcon />
             </button>
+            <ThemeToggle />
             <button className="icon-btn bag-btn" onClick={() => bag.setOpen(true)} aria-label={`My list, ${bag.count} items`}>
               <BagIcon />
               {bag.count > 0 && <span className="bag-count">{bag.count}</span>}
