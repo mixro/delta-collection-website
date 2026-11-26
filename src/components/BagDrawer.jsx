@@ -14,20 +14,20 @@ export default function BagDrawer() {
   return (
     <>
       <div className={`drawer-backdrop ${bag.open ? 'is-open' : ''}`} onClick={() => bag.setOpen(false)} />
-      <aside className={`bag-drawer ${bag.open ? 'is-open' : ''}`} aria-hidden={!bag.open} aria-label="My list">
+      <aside className={`bag-drawer ${bag.open ? 'is-open' : ''}`} aria-hidden={!bag.open} aria-label="Cart">
         <div className="drawer-head">
           <div>
-            <h2 className="drawer-title">My list</h2>
-            <p className="muted small">Collect products, then send them to us in one WhatsApp message.</p>
+            <h2 className="drawer-title">Your cart</h2>
+            <p className="muted small">Send your whole order to us in one WhatsApp message.</p>
           </div>
-          <button className="icon-btn" onClick={() => bag.setOpen(false)} aria-label="Close list">
+          <button className="icon-btn" onClick={() => bag.setOpen(false)} aria-label="Close cart">
             <CloseIcon />
           </button>
         </div>
         {bag.items.length === 0 ? (
           <div className="bag-empty">
             <BagIcon width={36} height={36} />
-            <p>Your list is empty.</p>
+            <p>Your cart is empty.</p>
             <Link to="/shop" className="btn btn-outline" onClick={() => bag.setOpen(false)}>Browse the collection</Link>
           </div>
         ) : (
@@ -58,7 +58,7 @@ export default function BagDrawer() {
               <a className="btn btn-gold btn-block btn-lg" href={listOrderLink(bag.items)} target="_blank" rel="noreferrer">
                 <WhatsAppIcon /> Send order on WhatsApp
               </a>
-              <button className="link-btn small center" onClick={bag.clear}>Clear list</button>
+              <button className="link-btn small center" onClick={bag.clear}>Clear cart</button>
             </div>
           </>
         )}

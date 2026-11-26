@@ -17,8 +17,8 @@ Built with React + Vite. Products and photos are managed from a phone through th
 | About, Contact | `/about`, `/contact` |
 | Admin panel | `/admin` |
 
-Ordering: every product has an **Order on WhatsApp** button that opens a chat with the product name, quantity
-and price filled in. Customers can also collect several products in **My list** and send them in one message.
+Ordering: product cards have an **Add to cart** button, and the cart sends the whole order in one WhatsApp message.
+Each product page also has an **Order on WhatsApp** button for ordering that item straight away.
 
 ## Run it on your computer
 

@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom'
 import { useCatalog } from '../lib/catalog'
 import { useBag } from '../lib/bag'
 import { formatPrice, imageSrcSet, imageUrl } from '../lib/format'
-import { productOrderLink } from '../lib/whatsapp'
-import { CheckIcon, PlusIcon, WhatsAppIcon } from './Icons'
+import { BagIcon, CheckIcon } from './Icons'
 
 export default function ProductCard({ product: p, eager = false }) {
   const { catBySlug } = useCatalog()
@@ -28,15 +27,6 @@ export default function ProductCard({ product: p, eager = false }) {
           {!p.inStock && <span className="badge badge-muted">Sold out</span>}
         </div>
       </Link>
-      <button
-        className={`card-add ${inList ? 'is-added' : ''}`}
-        onClick={() => (inList ? bag.setOpen(true) : bag.add(p))}
-        aria-label={inList ? 'In your list' : `Add ${p.name} to your list`}
-        title={inList ? 'In your list' : 'Add to list'}
-        disabled={!p.inStock}
-      >
-        {inList ? <CheckIcon width={16} height={16} /> : <PlusIcon width={16} height={16} />}
-      </button>
       <div className="card-body">
         <p className="eyebrow">{p.brand || catBySlug[p.category]?.name}</p>
         <h3 className="card-title">
@@ -47,9 +37,13 @@ export default function ProductCard({ product: p, eager = false }) {
           {onSale && <s>{formatPrice(p.compareAtPrice)}</s>}
         </p>
         {p.inStock ? (
-          <a className="btn btn-outline btn-sm card-order" href={productOrderLink(p)} target="_blank" rel="noreferrer">
-            <WhatsAppIcon width={15} height={15} /> Order
-          </a>
+          <button
+            className={`btn btn-sm card-order ${inList ? 'btn-gold' : 'btn-outline'}`}
+            onClick={() => (inList ? bag.setOpen(true) : bag.add(p))}
+            aria-label={inList ? `${p.name} is in your cart, view cart` : `Add ${p.name} to cart`}
+          >
+            {inList ? <><CheckIcon width={15} height={15} /> In cart</> : <><BagIcon width={15} height={15} /> Add to cart</>}
+          </button>
         ) : (
           <span className="btn btn-ghost btn-sm card-order is-disabled">Sold out</span>
         )}

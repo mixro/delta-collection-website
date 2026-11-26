@@ -66,7 +66,7 @@ export default function Header() {
               <SearchIcon />
             </button>
             <ThemeToggle />
-            <button className="icon-btn bag-btn" onClick={() => bag.setOpen(true)} aria-label={`My list, ${bag.count} items`}>
+            <button className="icon-btn bag-btn" onClick={() => bag.setOpen(true)} aria-label={`Cart, ${bag.count} items`}>
               <BagIcon />
               {bag.count > 0 && <span className="bag-count">{bag.count}</span>}
             </button>

@@ -175,7 +175,7 @@ export default function Home() {
             <li>
               <span className="step-no">01</span>
               <h3>Browse</h3>
-              <p>Find what you love by category, brand or search. Add several items to your list if you like.</p>
+              <p>Find what you love by category, brand or search. Add several items to your cart if you like.</p>
             </li>
             <li>
               <span className="step-no">02</span>

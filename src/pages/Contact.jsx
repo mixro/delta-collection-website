@@ -62,7 +62,7 @@ export default function Contact() {
           <div id="how-to-order" className="info-block">
             <h2 className="h3">How to order</h2>
             <ol className="plain-list">
-              <li>Find the product you want and tap <strong>Order on WhatsApp</strong>, or add several products to <strong>My list</strong> and send them together.</li>
+              <li>Find the product you want and tap <strong>Order on WhatsApp</strong>, or add several products to your <strong>cart</strong> and send them together.</li>
               <li>WhatsApp opens with your order written for you. Press send.</li>
               <li>We confirm availability, the delivery fee and payment, then send your order.</li>
             </ol>

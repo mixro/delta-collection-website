@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
-// "My list": products a customer collects to send in one WhatsApp message.
+// Cart: products a customer collects to send in one WhatsApp message.
 const BagContext = createContext(null)
 const KEY = 'dc-list-v1'
 

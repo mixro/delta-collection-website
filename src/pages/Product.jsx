@@ -8,7 +8,7 @@ import { useTitle } from '../lib/useTitle'
 import { BUSINESS, GROUPS } from '../config'
 import ProductCard from '../components/ProductCard'
 import { SectionHead } from '../components/Section'
-import { CheckIcon, MinusIcon, PlusIcon, ShareIcon, ShieldIcon, TruckIcon, WhatsAppIcon, ChatIcon } from '../components/Icons'
+import { BagIcon, CheckIcon, MinusIcon, PlusIcon, ShareIcon, ShieldIcon, TruckIcon, WhatsAppIcon, ChatIcon } from '../components/Icons'
 import NotFound from './NotFound'
 
 export default function Product() {
@@ -112,7 +112,7 @@ export default function Product() {
                   <WhatsAppIcon /> Order on WhatsApp
                 </a>
                 <button className="btn btn-outline btn-lg btn-block" onClick={addToList}>
-                  {added ? (<><CheckIcon /> Added to your list</>) : (<><PlusIcon /> Add to my list</>)}
+                  {added ? (<><CheckIcon /> Added to cart</>) : (<><BagIcon /> Add to cart</>)}
                 </button>
               </div>
             ) : (
